@@ -1,0 +1,443 @@
+/* 主页的index.html样式表 */
+/* 导航栏 */
+.topbar-wrapper {
+    height: 40px;
+    line-height: 40px;
+    width: 100%;
+    background-color: #333333;
+    font: 10px;
+    font-size: 12px;
+}
+.topbar a {
+    color: #b0b0b0;
+    display: block;
+}
+.topbar a:hover {
+    color: #fff;
+}
+.topbar li {
+    float: left;
+    margin: auto 4px;
+}
+.topbar .shop-cart, .topbar .user-info {
+    float: right;
+}
+.topbar .line {
+    color: #424242;
+}
+.topbar .shop-cart {
+    margin-left: 26px;
+}
+.topbar .shop-cart a{
+    width: 120px;
+    background-color: #424242;
+    text-align: center;
+}
+.topbar .shop-cart i {
+    margin-right: 6px;
+}
+.topbar .shop-cart:hover a {
+    background-color: #fff;
+    color: #ff6700;
+}
+/* 下拉二维码 */
+.qrcode-wrapper {
+    position: relative;
+}
+.qrcode-wrapper:hover a::before{
+    display: block;
+}
+.qrcode-wrapper:hover .qrcode{
+    /* display: block; */
+    height: 148px;
+}
+.qrcode-wrapper .qrcode {
+    width: 124px;
+    /* height: 148px; */
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+    position: absolute;
+    left: -42px;
+    top: 40px;
+    /* 这种方法不能设置渐变效果 display: none; */
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s;
+    z-index: 9999;
+}
+/* 二维码图片 */
+.qrcode-wrapper .qrcode img {
+    width: 90px;
+    height: 90px;
+    margin: 17px 17px 0px;
+}
+/* 二维码文字 */
+.qrcode-wrapper .qrcode p {
+    line-height: 1;
+    text-align: center;
+    font-size: 14px;
+    color: #000;
+}
+.qrcode-wrapper a {
+    position: relative;
+}
+/* 下拉二维码小三角, 加一个伪元素 */
+.qrcode-wrapper a::before {
+    content: "";
+    border: 8px solid transparent;
+    border-top: none;
+    border-bottom-color: #fff;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 32px;
+    left: 10px;
+    display: none;
+}
+
+/* 设置中部head */
+.head-wrapper {
+    position: relative;
+}
+.head {
+    height: 100px;
+    /* background-color: pink; */
+}
+.head .logo {
+    height: 55px;
+    width: 55px;
+    position: relative;
+    background-color: #ff6700;
+    margin-top: 22px;
+    overflow: hidden;
+    float: left;
+}
+.head .img-logo {
+    height: 55px;
+    width: 55px;
+    position: absolute;
+    background-position: center;
+    left: 0;
+    top: 0;
+    transition: left 0.3s;
+}
+.head .img-home {
+    height: 55px;
+    width: 55px;
+    position: absolute;
+    background-position: center;
+    left: 55px;
+    top: 0;
+    transition: left 0.3s;
+}
+.head .logo:hover .img-logo {
+    left: -55px;
+}
+.head .logo:hover .img-home {
+    left: 0px;
+}
+
+/* 中间导航条 */
+.nav {
+    height: 100px;
+    /* background-color: lightyellow; */
+    line-height: 100px;
+    font-size: 16px;
+    /* margin-left: 60px; */
+    /* padding-left: 50px; */
+    float: left;
+}
+.nav ul li{
+    float: left;
+    margin-right: 20px;
+}
+.nav ul li:first-child {
+    visibility: hidden;
+}
+.nav ul li a:hover {
+    color: #ff6700;
+}
+/* !!!中部head下拉菜单 !!!*/
+.nav .goods-info {
+    height: 0px;
+    width: 100%;
+    background: #fff;
+    position: absolute;
+    left: 0px;
+    top: 100px;
+    transition: height 0.3s;
+    z-index: 9999;
+}
+.nav .show-info:hover ~ .goods-info, 
+.nav .goods-info:hover{
+    height: 228px;
+    border-top: 1px solid rgba(224, 224, 224, 0.3);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+/* 中部head右边搜索框 */
+.search-wrapper {
+    background-color: lightpink;
+    height: 50px;
+    width: 296px;
+    float: right;
+    margin-top: 25px;
+}
+.search-wrapper .search-input {
+    /* 删除input和button之间的距离 */
+    float: left;
+    /* 清除内部border和padding */
+    padding: 0 10px;
+    border: 1px solid rgb(224, 224, 224);
+    box-sizing: border-box;
+    height: 50px;
+    width: 244px;
+    /* 去掉focus后的蓝色边框 */
+    outline: none;
+    font-size: 14px;
+}
+.search-wrapper .search-btn {
+    /* 删除input和button之间的距离 */
+    float: left;
+    /* 清除内部border和padding */
+    padding: 0;
+    border: 1px solid rgb(224, 224, 224);
+    border-left: none;
+    box-sizing: border-box;
+    height: 50px;
+    width: 52px;
+    color: #616161;
+    font-size: 18px;
+    background-color: #fff;
+    /* 去掉focus后的蓝色边框 */
+    outline: none;
+}
+.search-wrapper .search-input:focus, 
+.search-wrapper .search-input:focus + button {
+    border-color: #ff6709;
+}
+.search-wrapper .search-btn:hover {
+    background-color: #ff6709;
+    color: #fff;
+    border: none;
+}
+
+/* 中间导航+轮播图 */
+.banner-wrapper {
+    height: 460px;
+    position: relative;
+    /* background-color: pink; */
+}
+.banner-wrapper .banner-left {
+    width: 234px;
+    height: 420px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px 0;
+    z-index: 999;
+    position: absolute;
+}
+.banner-wrapper .banner-left a{
+    display: block;
+    line-height: 42px;
+    font-size: 14px;
+    color: #fff;
+    padding-left: 32px;
+}
+.banner-wrapper .banner-left a:hover {
+    background-color: #ff6700;
+}
+.banner-wrapper .banner-left i {
+    float: right;
+    line-height: 42px;
+    margin-right: 26px;
+}
+/* 轮播图 */
+.banner-wrapper .banner {
+    height: 460px;
+    width: 100%;
+    /* background-color: lightyellow; */
+    position: relative;
+}
+.banner-wrapper .banner-img li {
+    position: absolute;
+}
+.banner-wrapper .banner-img img {
+    width: 100%;
+    height: 460px;
+}
+.banner-wrapper .banner-pointer {
+    position: absolute;
+    bottom: 30px;
+    right: 34px;
+}
+.banner-wrapper .banner-pointer a {
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.6);
+    /* 将背景颜色只设置在内容区，边框和内边距不再有背景颜色 */
+    background-clip: content-box;
+}
+.banner-wrapper .banner-pointer li {
+    float: left;
+    margin-left: 8px;
+}
+.banner-wrapper .banner-pointer a:hover {
+    background-color: #fff;
+    border: 2px solid rgba(0, 0, 0, 0.6);
+}
+.banner-wrapper .arrow-left {
+    width: 41px;
+    height: 69px;
+    position: absolute;
+    left: 234px;  
+    /* top: 460/2-70/2=195 */
+    top: 195px;
+    margin: auto 0;
+    /* background-color: lightyellow; */
+}
+.banner-wrapper .arrow-left a {
+    display: block;
+    width: 100%;
+    height: 100%; 
+    /* background-color: lightgreen; */
+    background-image: url(../images/xiaomi/icon-slides.png);
+    /* left = 41 * 2 + 2 = 84 */
+    background-position: 83px 0;
+}
+.banner-wrapper .arrow-left a:hover {
+    background-position: 0 0;
+}
+.banner-wrapper .arrow-right {
+    width: 41px;
+    height: 69px;
+    position: absolute;
+    right: 0;
+    top: 195px;
+    margin: auto 0;
+    /* background-color: lightyellow; */
+}
+.banner-wrapper .arrow-right a {
+    display: block;
+    width: 100%;
+    height: 100%; 
+    /* background-color: lightgreen; */
+    background-image: url(../images/xiaomi/icon-slides.png);
+    /* left = 41 * 2 + 2 = 84 */
+    background-position: 42px 0;
+}
+.banner-wrapper .arrow-right a:hover {
+    background-position: 125px 0;
+}
+/* 中部广告区 */
+.ads-wrapper {
+    height: 170px;
+    /* background-color:lightyellow; */
+    margin: 20px auto 0;
+    width: 1226px;
+}
+/* 中部广告区 左边导航 */
+.ads-wrapper .ads-nav {
+    float: left;
+    width: 228px;
+    height: 100%;
+    background-color: #5e5751;
+    padding-left: 6px;
+}
+.ads-wrapper .ads-nav a {
+    display: block;
+    width: 76px;
+    height: 84px;
+    color: #CFCCCA;
+    font-size: 12px;
+    /* 水平居中 */
+    text-align: center;
+    /* 上外边距折叠 */
+    overflow: hidden;
+}
+.ads-wrapper .ads-nav a:hover {
+    color: #fff;
+}
+/* 横线 */
+.ads-wrapper .ads-nav li {
+    position: relative;
+}
+.ads-wrapper .ads-nav li::before {
+    content: "";
+    width: 64px;
+    height: 1px;
+    background-color:#665e57;
+    /* background-color: red; */
+    position: absolute;
+    top: 6px;
+    /* left = 0, right = 0, margin auto才能居中 */
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+/* 竖线 */
+.ads-wrapper .ads-nav li::after {
+    content: "";
+    width: 1px;
+    height: 64px;
+    background-color:#665e57;
+    /* background-color: red; */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+}
+.ads-wrapper .ads-nav i {
+    display: block;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 6px;
+}
+.ads-wrapper li {
+    float: left;
+}
+/* 中部广告图片 */
+.ads-wrapper .ads-img li {
+    height: 170px;
+    width: 316px;
+    margin-left: 15px;
+}
+.ads-wrapper .ads-img li:first-child {
+    margin-left: 14px;
+}
+.ads-wrapper .ads-img img {
+    height: 100%;
+    width: 100%;
+}
+/* 右边功能条 */
+.right-bar {
+    height: 206px;
+    width: 26px;
+    /* background-color: pink; */
+    /* left + margin-left + width + margin-right + right
+    auto + 0 + 26 + x + 50% -> x = 26 + 1226/2 = 26 + 613 = 639
+    不能设置margin-left, bar位置不会改变，left和margin-left会此消彼长；
+    改变margin-right的值，bar位置会改变，需要计算一下x的值
+    */
+    position: fixed;
+    left: auto;
+    right: 50%;
+    margin-right: -639px;
+    top: 350px;
+} 
+.right-bar li {
+    line-height: 40px;
+    text-align: center;
+    border: 1px solid rgb(245, 245, 245);
+    border-top: none;
+}
+.right-bar li:first-child {
+    border-top: 1px solid rgb(245, 245, 245);
+}
+.right-bar li a{
+    color: rgb(153, 153, 153);
+}
+.right-bar li a:hover {
+    color: #ff6709;
+}

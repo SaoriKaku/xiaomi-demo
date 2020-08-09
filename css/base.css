@@ -1,0 +1,21 @@
+/* 公共样式 */
+.clearfix::before, .clearfix::after {
+    display: table;
+    content: "";
+    clear: both;
+}
+body {
+    font: 14px/1.5 Helvetica Neue, Helvetica, Arial, Microsoft Yahei;
+    color: #333;
+    /* body小到一定程度就不会再小了 */
+    min-width: 1226px;
+}
+/* 设置屏幕中间的宽度 */
+.w {
+    width: 1226px;
+    margin: 0 auto;
+}
+a {
+    text-decoration: none;
+    color: #333;
+}
